@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: calc(100% - ${theme.spacing(10)});
   margin-top: ${theme.spacing(10)}; // Header height

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import Header from "components/Header";
 import Container from "components/Container";
-import CurrentWeather from "components/CurrentWeather";
-import ExtendedWeather from "components/ExtendedWeather";
+import Spinner from "components/Spinner";
 
 import { Wrapper, Main } from "./styles";
+
+const CurrentWeather = lazy(() => import("components/CurrentWeather"));
+const ExtendedWeather = lazy(() => import("components/ExtendedWeather"));
+const PageNotFound = lazy(() => import("components/PageNotFound"));
 
 /**
  * Main sections and routes.
@@ -19,8 +22,23 @@ const App: React.FC = () => (
     <Main>
       <Container>
         <Switch>
-          <Route path="/" exact component={CurrentWeather} />
-          <Route path="/16-day" exact component={ExtendedWeather} />
+          <Route path="/" exact>
+            <Suspense fallback={<Spinner />}>
+              <CurrentWeather />
+            </Suspense>
+          </Route>
+
+          <Route path="/16-day" exact>
+            <Suspense fallback={<Spinner />}>
+              <ExtendedWeather />
+            </Suspense>
+          </Route>
+
+          <Route path="*">
+            <Suspense fallback={<Spinner />}>
+              <PageNotFound />
+            </Suspense>
+          </Route>
         </Switch>
       </Container>
     </Main>
