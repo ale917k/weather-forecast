@@ -87,7 +87,10 @@ export const theme = {
   },
   spacing: (x: number): string => `${x * 8}px`,
   shape: {
-    borderRadius: "8px",
+    borderRadius: "5px",
+  },
+  shadows: {
+    3: "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
   },
   transitions: {
     easing: {
