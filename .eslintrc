@@ -27,7 +27,14 @@
         "tsx": "never"
       }
     ],
-    "arrow-body-style": ["warn", "as-needed"]
+    "arrow-body-style": ["warn", "as-needed"],
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "camelcase": "off"
   },
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],

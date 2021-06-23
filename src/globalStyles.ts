@@ -49,32 +49,28 @@ export const theme = {
     fontWeightBold: 700,
     h1: {
       fontWeight: 700,
-      fontSize: isMobile ? "3.2rem" : "3.625rem",
+      fontSize: "2rem",
       lineHeight: 1.25,
     },
     h2: {
       fontWeight: 300,
-      fontSize: "1rem",
+      fontSize: "1.4rem",
       lineHeight: 1.5,
       letterSpacing: "0.15em",
     },
     h3: {
       fontWeight: 700,
-      fontSize: "2.25rem",
+      fontSize: "1.2rem",
       lineHeight: 1.5,
-      letterSpacing: "0em",
+      letterSpacing: "0.1em",
     },
     body: {
-      lg: {
+      reg: {
         fontSize: "1rem",
         lineHeight: 1.5,
       },
-      reg: {
-        fontSize: "0.875rem",
-        lineHeight: 1.5,
-      },
       sm: {
-        fontSize: "0.75rem",
+        fontSize: "0.833rem",
         lineHeight: 1.5,
       },
     },
@@ -91,6 +87,7 @@ export const theme = {
   },
   shadows: {
     3: "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+    5: "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
   },
   transitions: {
     easing: {

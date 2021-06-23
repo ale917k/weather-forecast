@@ -2,7 +2,8 @@ import React from "react";
 import { Background, StyledSpinner } from "./styles";
 
 /**
- * Spinner component, used when lazy loading pages / components.
+ * Spinner component used to wait for asynchronous operations.
+ * @returns Animated spinner.
  */
 const Spinner: React.FC = () => (
   <Background>

@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
-
 import Container from "components/Container";
 import { theme } from "globalStyles";
-
 import { Wrapper, Logo, Menu, MobileMenu, BurgerMenu } from "./styles";
 
 /**
@@ -14,17 +12,22 @@ import { Wrapper, Logo, Menu, MobileMenu, BurgerMenu } from "./styles";
 const Header: React.FC = () => {
   const location = useLocation();
 
+  // El reference to animate menu on open / close
   const menu = useRef<HTMLDivElement | null>(null);
+
+  // Ref to prevent toggling menu while animating open / close
   const animating = useRef<boolean>(false);
 
-  // Used for toggling mobile menu
+  // Used to toggle mobile menu
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+  // Open menu with animation
   const openMenu = (): void => {
     if (menu?.current) {
       animating.current = true;
 
       setIsMenuOpen(true);
+
       gsap.to(menu.current.children, {
         opacity: 1,
         duration: theme.transitions.duration.short / 1000,
@@ -37,6 +40,7 @@ const Header: React.FC = () => {
     }
   };
 
+  // Close menu with animation
   const closeMenu = (): void => {
     if (menu?.current) {
       animating.current = true;
@@ -49,6 +53,7 @@ const Header: React.FC = () => {
           animating.current = false;
         },
       });
+
       setTimeout(() => {
         setIsMenuOpen(false);
       }, theme.transitions.duration.short / 2);
@@ -76,7 +81,7 @@ const Header: React.FC = () => {
   return (
     <Wrapper isMenuOpen={isMenuOpen}>
       <Container>
-        <Logo to="/">Weather</Logo>
+        <Logo to="/">WeatherAPI</Logo>
 
         <Menu ref={menu} isMenuOpen={isMenuOpen}>
           <li>

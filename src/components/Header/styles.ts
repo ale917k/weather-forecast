@@ -10,7 +10,7 @@ export const Wrapper = styled.header<{ isMenuOpen: boolean }>`
   top: 0;
   width: 100%;
   height: ${theme.spacing(10)};
-  box-shadow: ${theme.shadows[3]};
+  box-shadow: ${theme.shadows[5]};
   z-index: 1;
 
   &:before {
@@ -66,7 +66,7 @@ export const Menu = styled.div<{ isMenuOpen: boolean }>`
     & > a {
       padding: ${theme.spacing(2)} ${theme.spacing(4)};
       border-radius: ${theme.shape.borderRadius};
-      ${theme.typography.body.reg};
+      ${theme.typography.body.sm};
       color: ${theme.palette.common.black};
       font-weight: 600;
       text-transform: uppercase;
