@@ -15,13 +15,26 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Coordinates = styled.div``;
+export const Coordinates = styled.div`
+  display: flex;
+
+  ${theme.breakpoints.phone} {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
 
 export const Coordinate = styled.span`
   ${theme.typography.body.sm};
 
   &:first-child {
     margin-right: ${theme.spacing(2)};
+  }
+
+  ${theme.breakpoints.phone} {
+    &:first-child {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -40,4 +53,6 @@ export const Temperature = styled.span`
   font-size: 3rem;
 `;
 
-export const Property = styled.span``;
+export const Property = styled.span`
+  text-align: center;
+`;

@@ -15,6 +15,10 @@ const Card = styled.div`
   border-radius: ${theme.shape.borderRadius};
   margin: auto;
   padding: ${theme.spacing(6)} ${theme.spacing(8)};
+
+  ${theme.breakpoints.phone} {
+    padding: ${theme.spacing(3)} ${theme.spacing(4)};
+  }
 `;
 
 export default Card;

@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState, Fragment } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { retrieveAllExtWeathers } from "api";
 import { AppContext } from "context";
 import ExtWeatherTypes from "context/extWeather/types";
 import cities from "data/cities.json";
 import Spinner from "components/Spinner";
-import Card from "components/Card";
 import SearchCard from "./SearchCard";
-import { ErrorMessage, Wrapper, CardTitle, Grid, Heading, Content, Img } from "./styles";
+import { ErrorMessage, Wrapper } from "./styles";
+import GridTable from "./GridTable";
 
 /**
  * Displays extended 16-day weather data for all specified cities.
@@ -68,36 +68,16 @@ const ExtendedWeather: React.FC = () => {
             <Wrapper>
               <SearchCard filters={filters} setFilters={setFilters} />
 
-              {Object.entries(extWeather).map((locationData, titleIndex) =>
+              {Object.entries(extWeather).map((locationData, index) =>
                 filterData(locationData[1])?.length ? (
-                  <Card key={`${locationData[0]}-${titleIndex}`}>
-                    <CardTitle>{locationData[0]}</CardTitle>
-
-                    <Grid>
-                      <Heading>Date</Heading>
-                      <Heading>Weather</Heading>
-                      <Heading>Temp</Heading>
-                      <Heading>Min Temp</Heading>
-                      <Heading>Max Temp</Heading>
-
-                      {filterData(locationData[1])?.map((data, dataIndex) => (
-                        <Fragment key={`${data?.datetime}-${dataIndex}`}>
-                          <Content>{data.datetime}</Content>
-                          <Content>
-                            <Img
-                              src={`https://www.weatherbit.io/static/img/icons/${data?.weather?.icon}.png`}
-                              alt={data?.weather?.description}
-                            />
-                          </Content>
-                          <Content>{data.temp}°</Content>
-                          <Content>{data.min_temp}°</Content>
-                          <Content>{data.max_temp}°</Content>
-                        </Fragment>
-                      ))}
-                    </Grid>
-                  </Card>
+                  <GridTable
+                    key={`${locationData[0]}-${index}`}
+                    filterData={filterData}
+                    title={locationData[0] as City}
+                    data={locationData[1]}
+                  />
                 ) : null,
-              ) || <div>test</div>}
+              )}
             </Wrapper>
           ) : (
             <Spinner />

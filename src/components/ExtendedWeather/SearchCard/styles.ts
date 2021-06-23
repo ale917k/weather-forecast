@@ -5,6 +5,10 @@ import { theme } from "globalStyles";
 export const SearchGroup = styled.div`
   display: flex;
   width: 100%;
+
+  ${theme.breakpoints.phone} {
+    flex-direction: column;
+  }
 `;
 
 export const SearchTitle = styled.h1`

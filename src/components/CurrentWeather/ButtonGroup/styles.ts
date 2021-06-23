@@ -3,6 +3,7 @@ import { theme } from "globalStyles";
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: ${theme.spacing(10)} 0 ${theme.spacing(5)};
 `;
