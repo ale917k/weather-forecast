@@ -43,3 +43,34 @@ export const retrieveCurrentWeather = async (city: City): Promise<CurrentWeather
     throw new Error(`Error retrieving current weather data. Ref: ${printErr}`);
   }
 };
+
+/**
+ * Retrieve list of extended 16-day weather for list of cities.
+ * @param {City[]} cities - Array of cities to retrieve the weather for.
+ * @returns {LocationsExtWeather} Object with weathers for all specified locations.
+ */
+export const retrieveAllExtWeathers = async (cities: City[]): Promise<LocationsExtWeather> => {
+  const services = cities?.map((city) =>
+    fetch(
+      `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.REACT_APP_WEATHERBIT_API_KEY}&city=${city}`,
+    ).then((res) => res.json()),
+  );
+
+  let extWeathers = <LocationsExtWeather>{};
+
+  await Promise.all(services)
+    .then((data) => {
+      data.forEach((location) => {
+        extWeathers = {
+          ...extWeathers,
+          [location.city_name]: location.data,
+        };
+      });
+    })
+    .catch((err) => {
+      const printErr = objToString(err) || err;
+      throw new Error(`Error retrieving extended 16-day weather data. Ref: ${printErr}`);
+    });
+
+  return extWeathers as LocationsExtWeather;
+};
