@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Weather Forecast
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Weather Forecast is a React app for displaying current and 16-day extended weather data.
 
-## Available Scripts
+[Open Live Project](https://ale917k.github.io/weather-forecast/)
 
-In the project directory, you can run:
+## What It Uses:
 
-### `npm start`
+- React (w/Hooks & ContextAPI)
+- Typescript
+- Styled Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Make sure to have [git](https://git-scm.com/downloads) installed, then run:
 
-### `npm test`
+```bash
+git clone https://github.com/ale917k/weather-forecast
+cd ./weather-forecast
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add an `.env` file which looks as per `.env.example`:
 
-### `npm build`
+```
+REACT_APP_WEATHERBIT_API_KEY=<api-key> # You can grab a free Weatherbit API key after registering here: (https://www.weatherbit.io/)
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can then run `npm start` to start the project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project has been set up with a production environment ready for deployment on Github Pages.
 
-### `npm eject`
+To deploy your own version:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Fork project
+2. Run `npm run deploy` to publish the project on github
+3. Go to {your-GitHub-code-repository} -> Settings -> GitHub pages section and setup source to the gh-pages branch
+4. Set your environment variables by going to {your-GitHub-code-repository} -> Settings -> Environments -> github-pages --> Under Environment secrets, add new secrets
+5. Enjoy your new live project!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[MIT](https://choosealicense.com/licenses/mit/)
