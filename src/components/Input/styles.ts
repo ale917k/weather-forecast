@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 export const StyledInput = styled.input`
   width: 100%;
   height: 3rem;
-  border: 1px solid ${theme.palette.grey[150]};
+  border: 1px solid ${theme.palette.grey[100]};
   border-radius: 5px;
   outline: none;
   padding: 1rem 0.7rem;

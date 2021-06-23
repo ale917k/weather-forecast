@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   // El reference to animate menu on open / close
-  const menu = useRef<HTMLDivElement | null>(null);
+  const menu = useRef<HTMLUListElement | null>(null);
 
   // Ref to prevent toggling menu while animating open / close
   const animating = useRef<boolean>(false);

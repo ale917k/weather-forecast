@@ -54,7 +54,7 @@ export const Logo = styled(Link)`
   }
 `;
 
-export const Menu = styled.div<{ isMenuOpen: boolean }>`
+export const Menu = styled.ul<{ isMenuOpen: boolean }>`
   display: flex;
   align-items: center;
   padding: 0;

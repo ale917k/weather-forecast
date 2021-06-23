@@ -36,8 +36,8 @@ export const theme = {
     },
     grey: {
       50: "#F9FAFB",
-      100: "#E5E8EB",
-      150: "#BAC3C9",
+      100: "#BAC3C9",
+      150: "#63737E",
     },
     text: "#292E38",
   },

@@ -26,8 +26,8 @@ export const CardTitle = styled.h2`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, auto);
-  border-bottom: 1px solid ${theme.palette.grey[150]};
-  border-left: 1px solid ${theme.palette.grey[150]};
+  border-bottom: 1px solid ${theme.palette.grey[100]};
+  border-left: 1px solid ${theme.palette.grey[100]};
   width: 100%;
   overflow-x: auto;
 
@@ -36,8 +36,8 @@ export const Grid = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-top: 1px solid ${theme.palette.grey[150]};
-    border-right: 1px solid ${theme.palette.grey[150]};
+    border-top: 1px solid ${theme.palette.grey[100]};
+    border-right: 1px solid ${theme.palette.grey[100]};
     padding: ${theme.spacing(2)};
   }
 `;
