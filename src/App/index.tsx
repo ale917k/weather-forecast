@@ -22,19 +22,19 @@ const App: React.FC = () => (
     <Main>
       <Container>
         <Switch>
-          <Route path="/" exact>
+          <Route path={process.env.PUBLIC_URL} exact>
             <Suspense fallback={<Spinner />}>
               <CurrentWeather />
             </Suspense>
           </Route>
 
-          <Route path="/16-day" exact>
+          <Route path={`${process.env.PUBLIC_URL}16-day`} exact>
             <Suspense fallback={<Spinner />}>
               <ExtendedWeather />
             </Suspense>
           </Route>
 
-          <Route path="*">
+          <Route path={`${process.env.PUBLIC_URL}*`}>
             <Suspense fallback={<Spinner />}>
               <PageNotFound />
             </Suspense>

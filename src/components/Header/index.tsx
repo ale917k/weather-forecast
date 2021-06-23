@@ -81,14 +81,14 @@ const Header: React.FC = () => {
   return (
     <Wrapper isMenuOpen={isMenuOpen}>
       <Container>
-        <Logo to="/">WeatherAPI</Logo>
+        <Logo to={`${process.env.PUBLIC_URL}`}>WeatherAPI</Logo>
 
         <Menu ref={menu} isMenuOpen={isMenuOpen}>
           <li>
-            <Link to="/">Current</Link>
+            <Link to={`${process.env.PUBLIC_URL}`}>Current</Link>
           </li>
           <li>
-            <Link to="/16-day">16-Day</Link>
+            <Link to={`${process.env.PUBLIC_URL}16-day`}>16-Day</Link>
           </li>
         </Menu>
 
